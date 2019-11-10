@@ -1,0 +1,42 @@
+<div class="col-md-8 offset-md-4">
+    <div class="col-md-6">
+        <div class="logo mb-3">
+            <div class="col-md-12 text-center">
+                <h1>Login</h1>
+            </div>
+        </div>
+        <div class="card" (keypress)="onListenCreateAuth($event)">
+            <article class="card-body">
+                <a href="#" class="float-right btn btn-outline-primary">Sign up</a>
+                <h4 class="card-title mb-4 mt-1">Sign in</h4>
+                <!-- <form> -->
+                <div class="form-group">
+                    <label>User ID</label>
+                    <input class="form-control" placeholder="" [formControl]="loginForm.user_id" [maxlength]="20" popover="please input" triggers="" [isOpen]="loginForm.user_id.invalid && (loginForm.user_id.touched || loginForm.user_id.dirty || isCheckValid)">
+                </div>
+                <!-- form-group// -->
+                <div class="form-group">
+                    <a class="float-right btn" (click)="onForgotPassword()">Forgot?</a>
+                    <label>Password</label>
+                    <input class="form-control" placeholder="" type="{{isChecked ? 'text' : 'password'}}" [formControl]="loginForm.user_pwd" [maxlength]="20" popover="please input" triggers="" [isOpen]="loginForm.user_pwd.invalid && (loginForm.user_pwd.touched || loginForm.user_pwd.dirty || isCheckValid)">
+                </div>
+                <!-- form-group// -->
+                <div class="form-group">
+                    <div class="checkbox">
+                        <input type="checkbox" [attr.id]="'checbox1'" [(ngModel)]="isChecked">
+                        <label for="checkbox1">Show password</label>
+                    </div>
+                    <!-- checkbox .// -->
+                </div>
+                <!-- form-group// -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" (click)="onLoginUserAuth()"> Login </button>
+                </div>
+                <!-- form-group// -->
+                <!-- </form> -->
+            </article>
+        </div>
+        <!-- card.// -->
+
+    </div>
+</div>
