@@ -1,0 +1,23 @@
+.header {
+    height: 60px;
+    padding: 0 20px;
+    display:flex;
+    justify-content: space-between;
+
+    &__title {
+        font-size: 1.2em;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__navigation {
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+.app-a {
+    margin-left: 1em;
+    margin-right: 0;
+}

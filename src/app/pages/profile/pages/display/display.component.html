@@ -1,0 +1,33 @@
+<div class="app-page" *ngIf="user$ | async as user">
+
+    <div class="app-page__header">
+        <h1>{{user.name}}</h1>
+    </div>
+
+    <div class="app-page__content">
+
+        <div class="photo">
+            <app-user-photo [photoURL]="user.photoURL"></app-user-photo>
+        </div>
+
+        <p>
+            <b>About:</b> {{ user.about }}
+        </p>
+
+        <ng-container [ngSwitch]="user.roleId">
+
+            <app-employee *ngSwitchCase="'employee'" [role]="user.role">
+            </app-employee>
+
+            <app-recruiter *ngSwitchCase="'recruiter'" [role]="user.role">
+            </app-recruiter>
+
+        </ng-container>
+
+    </div>
+
+    <div class="app-page__footer" *ngIf="isOwnProfile$ | async">
+        <a class="app-button" routerLink="/profile/edit">Edit</a>
+    </div>
+
+</div>

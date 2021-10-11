@@ -1,0 +1,19 @@
+@import "styles/colors";
+@import "styles/mixins";
+
+.experiences {
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.experience {
+    @include card;
+    margin-bottom: 16px;
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

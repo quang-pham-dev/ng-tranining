@@ -1,0 +1,24 @@
+<div class="app-page">
+    <div class="app-page__header">
+        <h1>{{ title }}</h1>
+    </div>
+
+    <div class="app-page__content">
+
+        <app-stepper *ngIf="dictionariesIsReady$ | async">
+            <ng-container [ngSwitch]="stepper?.activeStep?.key">
+
+                <app-personal *ngSwitchCase="'personal'" [dictionaries]="dictionaries$ | async"
+                    (changed)="onChangedPersonal($event)" [value]="personal$ | async"></app-personal>
+
+                <app-professional *ngSwitchCase="'professional'" [dictionaries]="dictionaries$ | async"
+                    (changed)="onChangedProfessional($event)" [value]="professional$ | async"></app-professional>
+
+            </ng-container>
+        </app-stepper>
+
+    </div>
+
+    <app-spinner *ngIf="loading$ | async"></app-spinner>
+
+</div>

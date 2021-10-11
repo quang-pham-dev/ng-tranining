@@ -1,0 +1,16 @@
+@import "styles/colors";
+
+.app-page {
+    max-width: 500px;
+}
+
+.error {
+    opacity: 0;
+    font-size: 12px;
+    color: $error;
+    padding: 4px 0 16px 0;
+
+    &_active {
+        opacity: 1;
+    }
+}

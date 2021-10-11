@@ -1,0 +1,24 @@
+@import "styles/colors";
+
+.personal {
+    &__photo {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.photo {
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    padding-bottom: 20px;
+    flex-direction: column;
+
+    &__img {
+        margin-bottom: 16px;
+    }
+}
+
+.app-a {
+    margin: 0;
+}

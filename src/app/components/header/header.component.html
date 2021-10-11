@@ -1,0 +1,20 @@
+<div class="header">
+    <div class="header__title" routerLink="/">CourseApp</div>
+    <div class="header__navigation">
+        <a class="app-a" routerLink="demo" routerLinkActive="app-a_active">Demo</a>
+
+        <div *ngIf="!isAuthorized">
+            <a class="app-a" routerLink="auth/login" routerLinkActive="app-a_active">Log in</a>
+            <a class="app-a" routerLink="auth/registration" routerLinkActive="app-a_active">Registration</a>
+        </div>
+
+        <div *ngIf="isAuthorized">
+            <a class="app-a" routerLink="jobs">Jobs</a>
+            <a class="app-a" routerLink="employees">Employees</a>
+            <a class="app-a" (click)="onProfileNavigate()">Profile</a>
+            <a class="app-a" (click)="onSignOut()">Sign Out</a>
+        </div>
+
+
+    </div>
+</div>

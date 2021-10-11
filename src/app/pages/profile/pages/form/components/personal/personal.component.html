@@ -1,0 +1,25 @@
+<form [formGroup]="form" novalidate autocomplete="off" class="personal">
+
+    <div class="personal__photo">
+        <div class="photo">
+            <app-user-photo class="photo__img" [photoURL]="form.controls.photoURL.value"></app-user-photo>
+            <div class="app-a" appFilesUpload [crop]="true" (changed)="onPhotoChanged($event)">
+                Upload photo
+            </div>
+        </div>
+    </div>
+
+    <app-form-field label="Name" [required]="true" [control]="form.controls.name"
+        [patternError]="regexErrors.latinAndSpaces">
+        <app-input formControlName="name"></app-input>
+    </app-form-field>
+
+    <app-form-field label="Country" [required]="true" [control]="form.controls.country">
+        <app-autocomplete formControlName="country" [items]="dictionaries.countries.controlItems"></app-autocomplete>
+    </app-form-field>
+
+</form>
+
+<!-- <code>
+    {{ form.value | json}}
+</code> -->

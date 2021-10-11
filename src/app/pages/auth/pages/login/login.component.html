@@ -1,0 +1,31 @@
+<div class="app-page">
+
+    <div class="app-page__header">
+        <h1>Log in</h1>
+    </div>
+
+    <form [formGroup]="form" novalidate autocomplete="off" (submit)="onSubmit()" (keyup.enter)="onSubmit()">
+
+        <div class="app-page__content">
+
+            <app-form-field label="Email" [required]="true" [control]="form.controls.email" [isInline]="false"
+                [patternError]="regexErrors.email">
+                <app-input formControlName="email"></app-input>
+            </app-form-field>
+
+            <app-form-field label="Password" [required]="true" [control]="form.controls.password" [isInline]="false"
+                [patternError]="regexErrors.password">
+                <app-password formControlName="password"></app-password>
+            </app-form-field>
+
+        </div>
+
+        <div class="app-page__footer">
+            <app-button type="submit">Log in</app-button>
+        </div>
+
+    </form>
+
+    <app-spinner *ngIf="loading$ | async"></app-spinner>
+
+</div>

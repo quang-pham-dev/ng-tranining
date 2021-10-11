@@ -1,0 +1,27 @@
+.app-page {
+
+    max-width: 900px;
+    margin: 16px auto;
+     
+    background: $base-light;
+    border: 1px solid $base-dark;
+    border-radius: 8px;
+    padding: 32px;
+  
+    position: relative;
+    
+    &__header {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+  
+    &__content {
+  
+    }
+  
+    &__footer {
+      margin-top: 32px;
+      display: flex;
+      justify-content: flex-end;
+    }
+}

@@ -1,0 +1,13 @@
+<div class="app-page">
+
+    <div class="app-page__header">
+        <h1>Employees</h1>
+    </div>
+
+    <div class="app-page__content" *ngIf="employees$ | async as employees">
+
+        <app-employee *ngFor="let employee of employees" [employee]="employee"></app-employee>
+
+    </div>
+
+</div>

@@ -1,0 +1,79 @@
+@import "styles/colors";
+
+.radio {
+    display: block;
+    position: relative;
+    text-indent: 30px;
+    margin: 8px 0;
+    padding: 0 20px 0 0;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &__input {
+
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked {
+            &~.radio__checkmark {
+                background-color: $primary;
+               
+                &:after {
+                    display: block;
+                    background: #fff;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    left: 6px;
+                    top: 6px;
+                }
+            }
+        }
+
+    }
+
+    &__checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: #eee;
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+    }
+
+    &_disabled {
+        color: rgba(0,0,0,.38);
+    }
+
+    &:hover {
+        .radio__checkmark {
+            background-color: #ccc;
+        }
+
+        .radio__input:checked ~ .radio__checkmark {
+            background-color: $primary-dark;
+        }
+    }
+}
+
+
+:host-context(.form-field_error) {
+    .radio__checkmark {
+      border: 1px solid $error;
+    }
+}

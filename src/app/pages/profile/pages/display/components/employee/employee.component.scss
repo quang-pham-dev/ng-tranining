@@ -1,0 +1,20 @@
+@import 'styles/colors';
+
+.employee {
+
+    &__skills {
+        display: flex;
+    }
+    
+}
+
+.skill {
+    display: block;
+    background: $secondary;
+    color: $on-secondary;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 5px;
+    font-size: 0.8em;
+    font-weight: 500;
+}

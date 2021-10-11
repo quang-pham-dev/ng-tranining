@@ -1,0 +1,33 @@
+@import "styles/colors";
+@import "styles/mixins";
+
+.employee {
+    @include card;
+    margin-bottom: 16px;
+    display: flex;
+
+    &__info {
+        margin-left: 20px;
+    }   
+}
+
+.info {
+    &__header{
+        font-size: 1.2em;
+        margin-bottom: 12px;
+    }
+
+    &__skills {
+        display: flex;
+    }
+}
+
+.skill {
+    display: block;
+    background: $secondary;
+    color: $on-secondary;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 5px;
+    font-size: 0.8em;
+}

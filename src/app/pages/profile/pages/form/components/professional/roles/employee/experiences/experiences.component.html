@@ -1,0 +1,34 @@
+<form [formGroup]="parent" class="experiences">
+
+    <div [formArrayName]="name" *ngIf="parent.controls[name]">
+
+        <div class="experience"
+            *ngFor="let experience of parent.controls[name]['controls']; let i=index; let first=first">
+
+            <div [formGroupName]="i">
+
+                <app-form-field label="Company name" [required]="true" [control]="experience.controls.companyName"
+                    [isInline]="false">
+                    <app-input formControlName="companyName"></app-input>
+                </app-form-field>
+
+                <app-form-field label="Period" [required]="true" [control]="experience.controls.period"
+                    [isInline]="false">
+                    <app-date-range formControlName="period"></app-date-range>
+                </app-form-field>
+
+            </div>
+
+            <div class="experience__footer">
+                <app-button *ngIf="!first" (click)="deleteExperience(i)">Delete</app-button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="experiences__footer">
+        <app-button (click)="addExperience()">Add</app-button>
+    </div>
+
+</form>

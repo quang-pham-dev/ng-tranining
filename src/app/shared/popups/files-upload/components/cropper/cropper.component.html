@@ -1,0 +1,16 @@
+<div class="cropper">
+
+    <div class="cropper__content">
+
+        <image-cropper [imageFile]="imageFile" [maintainAspectRatio]="true" [aspectRatio]="1 / 1" format="jpg"
+            (imageCropped)="imageCropped($event)"></image-cropper>
+
+    </div>
+
+    <div class="cropper__actions">
+
+        <button class="app-button" (click)="onCrop()">Crop</button>
+
+    </div>
+
+</div>
